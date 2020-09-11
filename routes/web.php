@@ -27,6 +27,10 @@ $router->group(['prefix' => 'example', 'middleware' => 'appauth'], function () u
     $router->post('/post/data','ExampleController@post');
 });
 
+$router->group(['prefix' => 'user', 'middleware' => 'appauth'], function () use ($router) {
+    $router->get('/','UserController@index');
+});
+
 
 
 
